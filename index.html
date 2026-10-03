@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>挪威自駕與羅弗敦群島行程指南</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 FontAwesome 圖示 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f5; }
+        .hidden { display: none; }
+        
+        /* 交通標誌卡片與圖示專用 CSS */
+        .sign-icon-container { width: 80px; height: 80px; border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .sign-blue { background-color: #005b9f; color: white; border: 2px solid white; outline: 2px solid #005b9f; }
+        .sign-brown { background-color: #7a4b2c; color: white; border: 2px solid white; outline: 2px solid #7a4b2c; }
+        .sign-white { background-color: white; color: black; border: 1px solid #d1d5db; }
+        
+        .sign-speed { background-color: white; color: black; border: 6px solid #d32f2f; border-radius: 50%; font-size: 2rem; font-weight: 800; }
+        
+        .sign-speed-end { background-color: white; color: #9ca3af; border: 2px solid #9ca3af; border-radius: 50%; font-size: 2rem; font-weight: 800; overflow: hidden; }
+        .stripe-line { position: absolute; width: 120%; height: 2px; background-color: #374151; transform: rotate(-45deg); }
+        .stripe-1 { top: 25px; left: -10px; }
+        .stripe-2 { top: 35px; left: -10px; }
+        .stripe-3 { top: 45px; left: -10px; }
+        .stripe-4 { top: 55px; left: -10px; }
+        
+        /* 針對五欄排版的調整 */
+        @media (min-width: 1024px) {
+            .grid-cols-5-desktop { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased p-4 md:p-8 min-h-screen flex flex-col items-center">
+
+    <div class="max-w-[1400px] w-full bg-white rounded-2xl shadow-xl overflow-hidden relative pb-20 min-h-[85vh]">
+        
+        <!-- Header -->
+        <header class="bg-slate-800 text-white text-center py-6 px-4">
+            <h1 class="text-2xl md:text-3xl font-extrabold mb-2">🇳🇴 挪威自駕與羅弗敦群島行程指南</h1>
+            <p class="text-slate-300 text-sm md:text-base">Bodø 領車 ➔ Svolvær 還車</p>
+        </header>
+
+        <div class="p-6 md:p-10 bg-gray-50">
+            
+            <!-- 第 1 頁：交通標誌 (字體已放大) -->
+            <div id="page-1" class="page-content block">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-cols-5-desktop gap-6">
+                    
+                    <!-- 1 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-camera"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">1. 測速照相</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">前方設有測速照相機。挪威超速罰款非常高，看到此標誌請務必確認車速。</p>
+                        </div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-white flex-col leading-none">
+                                <i class="fa-solid fa-wifi text-[10px] self-end mr-2 mt-1 rotate-45"></i>
+                                <span class="text-xl font-black tracking-tighter">auto</span>
+                                <span class="text-xs font-bold mt-1">PASS</span>
+                            </div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">2. auto PASS</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">挪威的電子自動收費系統，行經該收費路段會自動掃描車牌計費，無需停車。</p>
+                        </div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-speed">60</div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">3. 速限 60</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">該路段最高速限為時速 60 公里。紅圈代表絕對禁止超過此速度。</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-speed-end">
+                                <span class="z-10 bg-white px-1">60</span>
+                                <div class="stripe-line stripe-1"></div>
+                                <div class="stripe-line stripe-2"></div>
+                                <div class="stripe-line stripe-3"></div>
+                                <div class="stripe-line stripe-4"></div>
+                            </div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">4. 解除速限 60</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">解除時速 60 公里的限制，恢復至該道路的一般法定速限（通常為 80 公里）。</p>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-gas-pump"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">5. 加油站</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">前方有加油站。在偏遠山區或峽灣地帶，建議看到加油站就隨時保持油量或電量充足。</p>
+                        </div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-tree mr-1"></i><i class="fa-solid fa-chair text-xl"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">6. 休息區</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">戶外休息區或野餐區。適合長途駕駛途中停車休息、用餐。</p>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue flex-col items-start p-2">
+                                <span class="text-sm font-bold ml-1 mb-1 leading-none">WC</span>
+                                <div class="self-end"><i class="fa-solid fa-tree mr-1 text-2xl"></i><i class="fa-solid fa-chair text-lg"></i></div>
+                            </div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">7. 附廁所休息區</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">附設公共廁所的戶外休息區。挪威郊區廁所不多，看到此標誌建議多加利用。</p>
+                        </div>
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-brown text-4xl font-light">⌘</div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">8. 旅遊景點</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">代表附近的旅遊景點、名勝古蹟或具有文化價值的地標，通常值得順道一遊。</p>
+                        </div>
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-brown text-3xl"><i class="fa-regular fa-sun"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">9. 觀景台</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">適合停車欣賞風景的觀景台 (Viewpoint)。挪威公路沿線充滿這種絕佳的拍照點。</p>
+                        </div>
+                    </div>
+
+                    <!-- 10 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-brown text-4xl"><i class="fa-brands fa-dyalog"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">10. 國家風景路線</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">代表您正行駛在官方認證的「挪威國家風景路線」上，是擁有世界級壯麗景觀的絕美公路。</p>
+                        </div>
+                    </div>
+
+                    <!-- 11 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-campground"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">11. 露營區</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">搭帳篷用的露營區。挪威擁有完善的露營文化與場地設施，非常適合大自然愛好者。</p>
+                        </div>
+                    </div>
+
+                    <!-- 12 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-caravan"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">12. 露營車營地</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">露營車 (Campervan) 專屬營地，通常提供供水、供電與廢水處理等設施。</p>
+                        </div>
+                    </div>
+
+                    <!-- 13 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-house"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">13. 小木屋住宿</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">小木屋 (Hytte) 或度假屋住宿。這是挪威最具特色的在地住宿選擇。</p>
+                        </div>
+                    </div>
+
+                    <!-- 14 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-bed"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">14. 旅館住宿</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">一般旅館、飯店或民宿等提供床位的住宿服務地點。</p>
+                        </div>
+                    </div>
+
+                    <!-- 15 -->
+                    <div class="bg-white rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-gray-100">
+                        <div class="h-32 flex items-center justify-center bg-gray-50/50 border-b border-gray-50 p-4">
+                            <div class="sign-icon-container sign-blue text-3xl"><i class="fa-solid fa-utensils"></i></div>
+                        </div>
+                        <div class="p-4 md:p-5 flex-1 flex flex-col">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">15. 餐廳</h3>
+                            <p class="text-[15px] text-gray-600 leading-relaxed">提供餐飲服務的地點（餐廳、簡餐或咖啡廳）。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 第 2 頁：法規與氣候 -->
+            <div id="page-2" class="page-content hidden space-y-8 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+                <section class="bg-red-50/80 rounded-xl p-6 border-l-4 border-red-500">
+                    <h2 class="text-2xl font-bold mb-4 text-red-600"><i class="fa-solid fa-hand text-xl mr-2"></i>一、 挪威國家交通法規</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="text-gray-900">酒駕零容忍：</strong>血液酒精濃度極限僅 0.02%，喝一口啤酒即可能超標，處罰極重。</li>
+                        <li><strong class="text-gray-900">天價超速罰款：</strong>超速罰鍰金額是按個人收入比例計算，沿途測速相機多，切勿超速。</li>
+                        <li><strong class="text-gray-900">全程開大燈：</strong>不分晝夜與晴雨，車輛只要行駛就必須全程開啟近光燈。</li>
+                        <li><strong class="text-gray-900">全員安全帶：</strong>車內所有乘客（含後座）皆強制繫好安全帶，違者面臨高額罰款。</li>
+                        <li><strong class="text-gray-900">右方車優先：</strong>在無標誌或無號誌路口，採右方來車絕對優先路權。</li>
+                        <li><strong class="text-gray-900">行人絕對優先：</strong>無紅綠燈號誌時，車輛在斑馬線前必須完全停讓行人。</li>
+                        <li><strong class="text-gray-900">圓環禮讓：</strong>進入圓環前，必須完全禮讓圓環內行駛中的車輛。</li>
+                    </ul>
+                </section>
+
+                <section class="bg-orange-50/80 rounded-xl p-6 border-l-4 border-orange-500">
+                    <h2 class="text-2xl font-bold mb-4 text-orange-600"><i class="fa-solid fa-leaf text-xl mr-2"></i>二、 10 月中旬極地氣候與路況</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="text-gray-900">日光時間壓縮：</strong>每日白天僅約 9–10 小時（約 08:10 日出、17:30 日落），行程務必安排在 09:00 - 16:30 之間。</li>
+                        <li><strong class="text-gray-900">清晨黑冰危機：</strong>秋末夜間氣溫逼近 0°C，清晨、橋面及背陰路段極易結成透明「黑冰」，路面看似乾燥實則極滑，行經彎道大橋須減速。</li>
+                        <li><strong class="text-gray-900">強風暴雨季節：</strong>10 月為當地多雨且風力最強的月份，行經跨海大橋須握緊方向盤。</li>
+                        <li><strong class="text-gray-900">戶外登山風險：</strong>熱門登山步道極易因大雨、積雪變得極度濕滑泥濘，須準備防滑高筒登山鞋，切勿勉強登頂。</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 第 3 頁：租車與渡輪 -->
+            <div id="page-3" class="page-content hidden space-y-8 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+                <section class="bg-slate-50/80 rounded-xl p-6 border-l-4 border-slate-700">
+                    <h2 class="text-2xl font-bold mb-4 text-slate-700"><i class="fa-solid fa-car text-xl mr-2"></i>三、 租車、輪胎與車款重點</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="text-gray-900">確認冬胎配備：</strong>取車時務必向租車公司確認是否已更換為冬胎（Winter Tyres）或釘胎。</li>
+                        <li><strong class="text-gray-900">四輪驅動優先：</strong>4 天短途行，建議優先選擇四輪驅動（4WD/AWD）車款，以應付突發降雪。</li>
+                        <li><strong class="text-gray-900">電動車續航驟降：</strong>低溫會讓電池續航力大幅下降約 20-30%，租用電動車需提早規劃快速充電站。</li>
+                        <li><strong class="text-gray-900">單程異地還車費：</strong>Bodø 領、Svolvær 還屬於跨海島異地還車，合約通常包含一筆不便宜的單程手續費。</li>
+                    </ul>
+                </section>
+
+                <section class="bg-blue-50/80 rounded-xl p-6 border-l-4 border-blue-500">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-600"><i class="fa-solid fa-ship text-xl mr-2"></i>四、 渡輪與數位支付</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="text-gray-900">冬季航班縮減：</strong>10 月中旬進入冬季時刻表，Bodø 往 Moskenes 的直達汽車渡輪每天僅 1–2 班，若飛機太晚抵達需在 Bodø 過夜。</li>
+                        <li><strong class="text-gray-900">渡輪因風停航：</strong>秋末外海風浪大，若遇極端強風暴雨，過海渡輪有可能短暫停航，行程須保有彈性。</li>
+                        <li><strong class="text-gray-900">AutoPASS 自動扣款：</strong>公路過路費、景觀橋與隨車渡輪費皆由車內 AutoPASS 系統感應並由信用卡扣繳。</li>
+                        <li><strong class="text-gray-900">4 位數 PIN 碼信用卡：</strong>主駕駛人需備妥本人晶片信用卡，且必須在台灣先開通預借現金功能以取得 4 位數 PIN 碼，用於自助加油。</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- 第 4 頁：路線與工具 -->
+            <div id="page-4" class="page-content hidden space-y-8 bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100">
+                <section class="bg-emerald-50/80 rounded-xl p-6 border-l-4 border-emerald-500">
+                    <h2 class="text-2xl font-bold mb-4 text-emerald-600"><i class="fa-solid fa-map-location-dot text-xl mr-2"></i>五、 由南往北 4 天黃金路線規劃</h2>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-sm font-bold mr-3 mt-1 whitespace-nowrap">Day 1</span> <div>Bodø 機場領車 ➔ 搭乘汽車渡輪至 Moskenes ➔ 抵達南部核心（住宿 Reine / Å / Hamnøy 紅色木屋區）。</div></li>
+                        <li class="flex items-start"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-sm font-bold mr-3 mt-1 whitespace-nowrap">Day 2</span> <div>探索經典南部漁村景觀公路、拍攝 Reine 與 Sakrisøy 明信片視角（視天候挑戰 Reinebringen 步道）。</div></li>
+                        <li class="flex items-start"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-sm font-bold mr-3 mt-1 whitespace-nowrap">Day 3</span> <div>沿 E10 公路北上 ➔ 途經 Ramberg Beach 白沙灘、Nusfjord 百年木屋村 ➔ 傍晚抵達 Henningsvær（威尼斯藝術漁村與海島足球場）。</div></li>
+                        <li class="flex items-start"><span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-sm font-bold mr-3 mt-1 whitespace-nowrap">Day 4</span> <div>通過 Gimsøystraumen 大橋 ➔ 深入羅弗敦最大城 Svolvær（拜訪 Svinøya 歷史區、港口晚餐）➔ Svolvær 機場或市區還車。</div></li>
+                    </ul>
+                </section>
+
+                <section class="bg-indigo-50/80 rounded-xl p-6 border-l-4 border-indigo-500">
+                    <h2 class="text-2xl font-bold mb-4 text-indigo-600"><i class="fa-solid fa-laptop-code text-xl mr-2"></i>六、 出行必備即時觀測工具</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center text-center border border-indigo-100">
+                            <i class="fa-solid fa-cloud-sun text-2xl text-indigo-500 mb-2"></i>
+                            <h3 class="font-bold text-indigo-900">天氣預報</h3>
+                            <p class="text-sm mt-1 text-gray-600">查詢官方氣象網 <strong>yr.no</strong></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center text-center border border-indigo-100">
+                            <i class="fa-solid fa-road text-2xl text-indigo-500 mb-2"></i>
+                            <h3 class="font-bold text-indigo-900">即時路況</h3>
+                            <p class="text-sm mt-1 text-gray-600">上公路局 <strong>175.no</strong> 確認道路</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center text-center border border-indigo-100">
+                            <i class="fa-solid fa-ferry text-2xl text-indigo-500 mb-2"></i>
+                            <h3 class="font-bold text-indigo-900">渡輪時刻</h3>
+                            <p class="text-sm mt-1 text-gray-600">至 <strong>Torghatten Nord</strong> 確認</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="mt-8 bg-yellow-100/80 border border-yellow-300 rounded-lg p-5 flex items-start shadow-sm">
+                    <span class="text-2xl mr-3">💡</span>
+                    <p class="text-sm text-yellow-900 font-semibold leading-relaxed">
+                        提醒：您目前是否已經訂妥 Bodø 抵達的航班時間與 Svolvær 離開的交通方式了呢？若需要核對班機與過海渡輪班次，隨時可以為您安排！
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 翻頁控制區 -->
+        <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 flex justify-between items-center shadow-[0_-4px_6px_rgba(0,0,0,0.02)]">
+            <button id="prevBtn" onclick="changePage(-1)" class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed border border-gray-200" disabled>
+                <i class="fa-solid fa-chevron-left mr-1"></i> 上一頁
+            </button>
+            <span id="pageIndicator" class="font-bold text-gray-500 tracking-wide">
+                1 / 4
+            </span>
+            <button id="nextBtn" onclick="changePage(1)" class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg transition-colors shadow-sm">
+                下一頁 <i class="fa-solid fa-chevron-right ml-1"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript 翻頁邏輯 -->
+    <script>
+        let currentPage = 1;
+        const totalPages = 4;
+
+        function changePage(direction) {
+            currentPage += direction;
+            
+            // 隱藏所有頁面
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.add('hidden');
+                page.classList.remove('block');
+            });
+            
+            // 顯示當前頁面
+            document.getElementById(`page-${currentPage}`).classList.remove('hidden');
+            document.getElementById(`page-${currentPage}`).classList.add('block');
+            
+            // 更新指示器
+            document.getElementById('pageIndicator').innerText = `${currentPage} / ${totalPages}`;
+            
+            // 更新按鈕狀態
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            
+            // 每次翻頁將畫面捲動回頂部
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
